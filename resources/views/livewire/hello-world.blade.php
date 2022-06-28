@@ -9,5 +9,4 @@
 
     {{implode(" ,", $greeting) }} {{ $name }} @if($loud) ! @endif
 
-
 </div>
