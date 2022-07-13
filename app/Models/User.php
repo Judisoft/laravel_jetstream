@@ -10,6 +10,10 @@ use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Jetstream\HasTeams;
 use Laravel\Sanctum\HasApiTokens;
+use App\Models\UserQuestion;
+use App\Models\Answer;
+use App\Models\Score;
+use App\Models\Payment;
 
 class User extends Authenticatable
 {
@@ -58,4 +62,23 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    public function user_questions()
+    {
+        return $this->hasMany(UserQuestion::class);
+    }
+
+    // public function answers() {
+    //     return $this->hasMany(Answer::class);
+    // }
+
+    public function scores()
+    {
+        return $this->hasMany(Score::class);
+    }
+
+    public function payments()
+    {
+        $this->hasMany(Payment::class);
+    }
 }

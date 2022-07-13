@@ -12,11 +12,18 @@ class QuizController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function displayQuiz($subject)
+    public function displayQuizzes()
     {
         
-        $questions = Question::all();
-        return view('quiz', compact('subject', 'questions'));
+        return view('quizzes');
+    }
+
+    public function quizGenerator($subject) 
+    {
+        $questions = Question::where('subject', $subject)->inRandomOrder()->limit(20)->get();
+       
+        return view('quiz-detail', compact('questions', 'subject'));
+
     }
 
     /**

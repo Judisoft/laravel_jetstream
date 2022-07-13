@@ -1,36 +1,29 @@
-<div class="p-6 sm:px-20 bg-white border-b border-gray-200">
-    <div>
-        <x-jet-application-logo class="block h-12 w-auto" />
-    </div>
 
-    <div class="mt-8 text-2xl">
-        <h4>Hello {{ auth()->user()->name }}</h4>
-    </div>
+<style>
+.subject-icon{
 
-    <div class="mt-6 text-gray-500">
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis blanditiis molestias quos? Officia optio necessitatibus quaerat vero. Dolorum, praesentium omnis eaque possimus suscipit commodi illum optio fugiat deleniti ullam, mollitia aperiam porro. Harum, doloribus! Praesentium veniam magni ad ullam unde! Incidunt repudiandae voluptas enim assumenda laborum consectetur minima nihil nostrum.
-    </div>
-</div>
-
-<div class="bg-gray-200 bg-opacity-25 grid grid-cols-1 md:grid-cols-2">
+    width: 45px;
+    height: 45px;
+    border-radius: 10px;
+    padding: 5px;
+}
+</style>
+<div class=" grid grid-cols-1 md:grid-cols-2">
     <div class="p-6">
         <div class="flex items-center">
-            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-400"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
-            <div class="ml-4 text-lg text-gray-600 leading-7 font-semibold"><a href="{{ route('display.quiz', 'biology') }}">Biology</a></div>
+            <img src="{{ asset('images/subjects/biology.png') }}" class="subject-icon bg-gray-100" />
+            <div class="ml-4 font-semibold text-xl text-gray-800 leading-tight uppercase"><a href="{{ route('display.quiz', 'biology') }}">Biology</a></div>
         </div>
 
         <div class="ml-12">
-            <div class="mt-2 text-sm text-gray-500">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati sit harum earum beatae aspernatur nam dolores explicabo error veritatis quo, recusandae repellendus! Tenetur nulla vitae repellat, minus est aperiam maiores exercitationem sint excepturi mollitia possimus officia cumque minima aut. Cupiditate perferendis odit maiores quidem ea a vel autem aliquam ipsa?
-            </div>
-
             <a href="{{ route('display.quiz', 'biology') }}">
                 <div class="mt-3 flex items-center text-sm font-semibold text-indigo-700">
-                        <div>Take Quiz</div>
-
+                    <button class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25 transition">
+                        Take quiz
                         <div class="ml-1 text-indigo-500">
-                            <svg viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                            <svg viewBox="0 0 20 20" fill="#ffffff" class="w-4 h-4"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
                         </div>
+                    </button>
                 </div>
             </a>
         </div>
@@ -38,22 +31,19 @@
 
     <div class="p-6 border-t border-gray-200 md:border-t-0 md:border-l">
         <div class="flex items-center">
-            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-400"><path d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path><path d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-            <div class="ml-4 text-lg text-gray-600 leading-7 font-semibold"><a href="{{ route('display.quiz', 'chemistry') }}">Chemistry</a></div>
+            <img src="{{ asset('images/subjects/chemistry.png') }}" class="subject-icon bg-gray-100" />
+            <div class="ml-4 font-semibold text-xl text-gray-800 leading-tight uppercase"><a href="{{ route('display.quiz', 'chemistry') }}">Chemistry</a></div>
         </div>
 
         <div class="ml-12">
-            <div class="mt-2 text-sm text-gray-500">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, necessitatibus id cupiditate obcaecati minima fugit numquam aliquam laudantium error est laborum temporibus magnam, architecto recusandae magni voluptates perferendis quidem quas esse vel aut atque commodi et. Modi quia assumenda, ut ipsum molestiae culpa unde, exercitationem nisi nam voluptas facilis perspiciatis.
-            </div>
-
             <a href="{{ route('display.quiz', 'chemistry') }}">
-                <div class="mt-3 flex items-center text-sm font-semibold text-indigo-700">
-                    <div>Take Quiz</div>
-
+                <div class="mt-3 flex items-right text-sm font-semibold text-indigo-700">
+                    <button class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25 transition">
+                        Take Quiz
                         <div class="ml-1 text-indigo-500">
-                            <svg viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                            <svg viewBox="0 0 20 20" fill="#ffffff" class="w-4 h-4"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
                         </div>
+                    </button>
                 </div>
             </a>
         </div>
@@ -61,21 +51,19 @@
 
     <div class="p-6 border-t border-gray-200">
         <div class="flex items-center">
-            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-400"><path d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-            <div class="ml-4 text-lg text-gray-600 leading-7 font-semibold"><a href="{{ route('display.quiz', 'physics') }}">Physics</a></div>
+            <img src="{{ asset('images/subjects/physics.png') }}" class="subject-icon bg-gray-100" />
+            <div class="ml-4 font-semibold text-xl text-gray-800 leading-tight uppercase"><a href="{{ route('display.quiz', 'physics') }}">Physics</a></div>
         </div>
 
         <div class="ml-12">
-            <div class="mt-2 text-sm text-gray-500">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique laboriosam dicta expedita maxime enim, dolore aliquam fuga deserunt earum, esse asperiores? Numquam officiis dolorem voluptatum dignissimos eligendi fugit libero voluptas qui rerum, asperiores explicabo eos praesentium ad amet doloribus quam at eaque quia facere. Eligendi ratione delectus magni ipsam porro.
-            </div>
             <a href="{{ route('display.quiz', 'physics') }}">
                 <div class="mt-3 flex items-center text-sm font-semibold text-indigo-700">
-                        <div>Take Quiz</div>
-
+                    <button class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white  tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25 transition">
+                        Take quiz
                         <div class="ml-1 text-indigo-500">
-                            <svg viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                            <svg viewBox="0 0 20 20" fill="#ffffff" class="w-4 h-4"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
                         </div>
+                    </button>
                 </div>
             </a>
         </div>
@@ -83,43 +71,57 @@
 
     <div class="p-6 border-t border-gray-200 md:border-l border-b">
         <div class="flex items-center">
-            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-400"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
-            <div class="ml-4 text-lg text-gray-600 leading-7 font-semibold">General Knowledge</div>
+            <img src="{{ asset('images/subjects/gen_know.png') }}" class="subject-icon bg-gray-100" />
+            <div class="ml-4 font-semibold text-xl text-gray-800 leading-tight uppercase"><a href="{{ route('display.quiz', 'general-knowledge') }}">General Knowledge</div>
         </div>
 
         <div class="ml-12">
-            <div class="mt-2 text-sm text-gray-500">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo vitae placeat corporis dolor natus saepe, veritatis distinctio doloribus inventore deleniti quaerat aut magni enim nesciunt ex, quam sit porro quas labore accusamus facere voluptate commodi ipsam? Voluptate, consequuntur eveniet. Perferendis doloribus quibusdam optio tenetur eligendi eaque possimus modi esse voluptate.
-            </div>
             <a href="{{ route('display.quiz', 'general-knowledge') }}">
                 <div class="mt-3 flex items-center text-sm font-semibold text-indigo-700">
-                    <div>Take Quiz</div>
-
+                    <button class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25 transition">
+                        Take Quiz
                         <div class="ml-1 text-indigo-500">
-                            <svg viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                            <svg viewBox="0 0 20 20" fill="#ffffff" class="w-4 h-4"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
                         </div>
+                    </button>
                 </div>
             </a>
         </div>
     </div>
     <div class="p-6 border-t border-gray-200 md:border-t-1">
         <div class="flex items-center">
-            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-400"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
-            <div class="ml-4 text-lg text-gray-600 leading-7 font-semibold"><a href="{{ route('display.quiz', 'language') }}">Language</a></div>
+            <img src="{{ asset('images/subjects/language.png') }}" class="subject-icon bg-gray-100" />
+            <div class="ml-4 font-semibold text-xl text-gray-800 leading-tight uppercase"><a href="{{ route('display.quiz', 'language') }}">Language</a></div>
         </div>
 
         <div class="ml-12">
-            <div class="mt-2 text-sm text-gray-500">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum numquam pariatur accusantium nam ratione dicta quia veniam? Fuga dignissimos deserunt, quibusdam porro voluptas eos hic veritatis aspernatur veniam labore, numquam, ducimus sunt magnam. Eaque sunt distinctio ex alias voluptates, deleniti dicta exercitationem possimus sequi a nulla quibusdam dolorem eum enim?
-            </div>
-
             <a href="{{ route('display.quiz', 'language') }}">
                 <div class="mt-3 flex items-center text-sm font-semibold text-indigo-700">
-                    <div>Take Quiz</div>
-
+                    <button class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25 transition">
+                        Take Quiz
                         <div class="ml-1 text-indigo-500">
-                            <svg viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                            <svg viewBox="0 0 20 20" fill="#ffffff" class="w-4 h-4"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
                         </div>
+                    </button>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="p-6 border-t border-gray-200 md:border-l border-b">
+        <div class="flex items-center">
+            <img src="{{ asset('images/subjects/examination.png') }}" class="subject-icon bg-gray-100" />
+            <div class="ml-4 font-semibold text-xl text-gray-800 leading-tight uppercase"><a href=" @if(auth()->user()->is_premium == 1){{ route('display.quiz', 'exam-standard') }} @else {{ route('payment') }} @endif">Sample Exam <small class="text-red-600">[Available for premium users only]</small></div>
+        </div>
+
+        <div class="ml-12">
+            <a href=" @if(auth()->user()->is_premium == 1){{ route('display.quiz', 'exam-standard') }} @else {{ route('payment') }} @endif">
+                <div class="mt-3 flex items-center text-sm font-semibold text-indigo-700">
+                    <button class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25 transition">
+                        Take Quiz
+                        <div class="ml-1 text-indigo-500">
+                            <svg viewBox="0 0 20 20" fill="#ffffff" class="w-4 h-4"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                        </div>
+                    </button>
                 </div>
             </a>
         </div>
