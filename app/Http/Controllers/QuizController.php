@@ -21,7 +21,6 @@ class QuizController extends Controller
     public function quizGenerator($subject) 
     {
         $questions = Question::where('subject', $subject)->inRandomOrder()->limit(20)->get();
-       
         return view('quiz-detail', compact('questions', 'subject'));
 
     }

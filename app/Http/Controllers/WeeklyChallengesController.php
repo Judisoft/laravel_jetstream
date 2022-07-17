@@ -14,12 +14,7 @@ class WeeklyChallengesController extends Controller
 {
     public function getChallengeQuestions()
     {
-        $questions = Question::where('subject', 'biology')->inRandomOrder()->limit(40)
-                    ->where('subject', 'chemistry')->inRandomOrder()->limit(20)
-                    ->where('subject', 'physics')->inRandomOrder()->limit(20)
-                    ->where('subject', 'general_knowledge')->inRandomOrder()->limit(10)
-                    ->where('subject', 'french')->inRandomOrder()->limit(10)
-                    ->get();
+        $questions = Question::where('subject', 'biology')->inRandomOrder()->limit(5)->get();
         
         return view('weekly-challenge', compact('questions'));
     }
@@ -41,39 +36,44 @@ class WeeklyChallengesController extends Controller
             $can_take_challenge = False;
         }
 
-        // $questions = Question::where('subject', 'biology')->inRandomOrder()->limit(5)->get();
+        $questions = Question::where('subject', 'biology')->inRandomOrder()->limit(5)->get();
         // $questions = [];
 
-        $max_questions = 100;
+        // $max_questions = 100;
 
-        $sub_quest_num = ['biology' => 40, 
-        'chemistry' => 20,
-         'physics' => 20, 
-        'general_knowledge' => 10, 
-        'french' => 10
-            ];
+        // $sub_quest_num = ['biology' => 40, 
+        // 'chemistry' => 20,
+        //  'physics' => 20, 
+        // 'general_knowledge' => 10, 
+        // 'french' => 10
+        //     ];
 
-        $subject = ['biology', 'chemistry', 'physics', 'general_knowledge', 'french'];
+        // $subject = ['biology', 'chemistry', 'physics', 'general_knowledge', 'french'];
 
-            // return dd(count($subject));
+        //     // return dd(count($subject));
 
-        for($i = 0; $i < count($subject); $i++)
-        {
-            $question = array(Question::where('subject', $subject[$i])->inRandomOrder()->limit($sub_quest_num[$subject[$i]])->get());
+        // for($i = 0; $i < count($subject); $i++)
+        // {
+        //     $question = array(Question::where('subject', $subject[$i])->inRandomOrder()->limit($sub_quest_num[$subject[$i]])->get());
 
-            $questions = array_merge([],$question);
+        //     $questions = array_merge([],$question);
             
-            // return dd($questions);
+        //     // return dd($questions);
+        // }
+        
+        // Render challenge only on saturdays
+
+        if (date('D') == 'Sat')
+        {
+            return view('weekly-challenge', compact('questions', 'last_week_id','can_take_challenge'));
+        } else{
+            abort(403, 'Medxam Challenge is available on Saturdays only');
         }
 
         
-
-        return dd($questions);
-
-        return view('weekly-challenge', compact('questions', 'last_week_id','can_take_challenge'));
     }
 
-    public function postScore(Request $request) {
+    public function postScore(Request $request) {   
 
         $chal_score = new Score;
         $chal_score->week_id = $request->week_id;

@@ -56,12 +56,12 @@ Route::get('/user_questions/{id}', [App\Http\Controllers\UserQuestionsController
 Route::get('/user_questions/{id}/edit', [App\Http\Controllers\UserQuestionsController::class, 'editQuestion'])->name('edit.question');
 Route::put('user_questions/{id}/edit', [App\Http\Controllers\UserQuestionsController::class, 'unpdateQuestion'])->name('update.question');
 Route::delete('/user_questions/{id}/delete', [App\Http\Controllers\UserQuestionsController::class, 'deleteQuestion'] )->name('delete.question');
+Route::post('/users_questions/{id}/answer', [App\Http\Controllers\AnswerController::class, 'postAnswer'])->name('post.answer');
 Route::get('/payment', [App\Http\Controllers\PaymentController::class, 'getPaymentProcessor'])->name('payment');
 Route::post('/payment', [App\Http\Controllers\PaymentController::class, 'postPaymentProcessor'])->name('post.payment');
 // upgrade users sub plan
 });
-Route::post('/users_questions/{id}/answer', [App\Http\Controllers\AnswerController::class, 'postAnswer'])->name('post.answer');
 
-Route::get('practice', [App\Http\Controllers\PracticeController::class, 'practice']);
+
 
 

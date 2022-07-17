@@ -51,7 +51,7 @@
                 <div class="flex justify-center pt-8 sm:justify-start sm:pt-0 w-48">
                    <div class="flex justify-center">
                         <img src="{{ asset('images/white-icon.png') }}" class="logo-img"/>
-                        <span class="pt-3 px-4 text-2xl font-bold">MEDXAM</span>
+                        <span class="pt-2 px-4 text-2xl font-bold">MEDXAM</span>
                     </div>
                 </div>
 

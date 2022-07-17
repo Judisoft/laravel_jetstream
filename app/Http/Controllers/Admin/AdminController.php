@@ -12,6 +12,8 @@ use App\Models\UserQuestion;
 use App\Models\Answer;
 use App\Models\Score;
 use Auth;
+use App\Mail\AccountStatusUpgraded;
+use Illuminate\Support\Facades\Mail;
 
 class AdminController extends Controller
 {
@@ -84,6 +86,8 @@ class AdminController extends Controller
 
         $user->save();
 
-        return redirect()->back()->with('success', Auth::user()->name.'account set to premium with success');
+        Mail::to(Auth::user())->send(new AccountStatusUpgraded($user));
+
+        return redirect()->back()->with('success', Auth::user()->name.': Account set to premium with success');
     }
 }

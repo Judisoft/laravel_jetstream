@@ -4,45 +4,45 @@
             {{ __('Post Question') }}
         </h2>
     </x-slot>
-    <div class="min-h-screen ml-3 mr-3 flex flex-col bg-gray-100 overflow-hidden items-center md:mx-32 sm:mx-32">
+    <div class="min-h-screen flex flex-col  bg-gray-100 items-center md:mx-32 sm:mx-32">
         <h1 class="uppercase font-bold p-3 text-2xl">My Questions</h1>
         @forelse ($user_questions as $question)
-            <div class="shadow-sm p-2 bg-white rounded-md  mr-auto mt-5 hover:shadow-md"  style="border-left:5px solid #E50914;">
-                <a href="{{ route('user_question.detail', $question->id) }}">
-                    <div class="px-2 sm:p-6 mx-auto" class="hover:bg-red-700">
-                        <div class="col-span-8 sm:col-span-4">
-                            <h3 class="font-semibold"> {!! $question->content !!} </h3>
-                        </div>
-                        <div class="flex justify-center mt-1 sm:items-center sm:justify-between">
-                            <div class="text-center text-sm text-gray-500 sm:text-left">
-                                <div class="flex items-center">
-                                    <span href="#" class="ml-1 underline">
-                                        @if(count($question->answers) > 0)
-                                            {{$question->answers->count().' '.Str::plural('answer', $question->answers->count()) }}
-                                        @else
-                                            No answer yet
-                                        @endif
-                                    </span>
-            
-                                    <span href="#" class="ml-3 underline">
-                                        {{ $question->created_at->diffForHumans() }}
-                                    </span>
-                                    <a href="{{ route('edit.question', $question->id) }}" class="ml-3 underline">
-                                        {{ __('edit') }}
-                                    </a>
-                                    <a href="{{ route('delete.question', $question->id) }}" class="ml-3 underline">
+            <a href="{{ route('user_question.detail', $question->id) }}">
+                <div class="min-w-96 bg-white px-2 rounded shadow:md hover:shadow-l mt-3 p-3 sm:p-6 ">
+                    <h3 class="font-semibold"> {!! $question->content !!} </h3>
+                    <div class="flex justify-center mt-1 sm:items-center sm:justify-between">
+                        <div class="text-center text-sm text-gray-500 sm:text-left">
+                            <div class="flex items-center">
+                                <span href="#" class="ml-1 underline">
+                                    @if(count($question->answers) > 0)
+                                        {{$question->answers->count().' '.Str::plural('answer', $question->answers->count()) }}
+                                    @else
+                                        No answer yet
+                                    @endif
+                                </span>
+        
+                                <span href="#" class="ml-3 underline">
+                                    {{ $question->created_at->diffForHumans() }}
+                                </span>
+                                <a href="{{ route('edit.question', $question->id) }}" class="ml-3 underline">
+                                    {{ __('edit') }}
+                                </a>
+                                <form method="POST"  action="{{ route('delete.question', $question->id) }}"> 
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" href="{{ route('delete.question', $question->id) }}" class="ml-3 underline">
                                         {{ __('delete') }}
-                                    </a>
-                                </div>
+                                    </button>
+                                </form>
                             </div>
                         </div>
                     </div>
-                </a>
-            </div>
+                </div>
+            </a>
         @empty
         <p class="border p-6 rounded-md">We're excited to have you ask your first question</p>
         @endforelse
-        <div class="w-full bg-white sm:max-w-2xl mt-6 p-5 rounded-md  shadow-md overflow-hidden sm:rounded-lg prose">
+        <div class="w-full bg-white border sm:max-w-2xl mt-6 p-5 rounded-md  shadow-md overflow-hidden sm:rounded-lg prose">
             @if ($errors->any())
                 <div>
                     <div class="font-medium text-red-600">{{ __('Whoops! Something went wrong.') }}</div>
@@ -63,7 +63,7 @@
             @endif
             <form method="POST" action="{{ route('post.question') }}">
                 @csrf
-                <div class="px-4 py-5 sm:p-6 mx-auto">
+                <div class="px-4 py-5 sm:p-6">
                     <div class="col-span-6 sm:col-span-4">
                         {{-- <x-jet-label for="name" value="{{ __('Post Questions') }}" /> --}}
                             {{-- <x-jet-label for="name" value="{{ __('Post Questions') }}" /> --}}

@@ -42,7 +42,7 @@
                                 <div class="shrink-0 mr-3">
                                     <img class="h-10 w-10 rounded-full object-cover" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" />
                                 </div>
-                                <div class="bg-gray-100 px-3 py-2 mt-2 rounded text-md font-semibold" style="border-left:5px solid #2EB67D;">                 
+                                <div class="flex items-center w-full bg-gray-100 px-3 py-2 mt-2 rounded text-md font-semibold" style="border-left:5px solid #2EB67D;">                 
                                     {!! $user_answer->answer !!}
                                 </div>
                             </div>

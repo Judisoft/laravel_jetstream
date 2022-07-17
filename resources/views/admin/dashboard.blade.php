@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
-<!-- Mirrored from themeon.net/nifty/v3.0.1/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 10 Jul 2022 23:15:42 GMT -->
 <head>
     <meta name="generator" content="Hugo 0.87.0" />
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
-    <meta name="description" content="Nifty is a responsive admin dashboard template based on Bootstrap 5 framework. There are a lot of useful components.">
-    <title>Dashboard 1 | Nifty - Admin Template</title>
+    <meta name="description" content="Medxam is an online quiz platform for students preparing for Nationa entrance examination to study medecine">
+    <title>Dashboard | Medxam</title>
 
     <!-- STYLESHEETS -->
     <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~--- -->
@@ -18,11 +16,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&amp;family=Ubuntu:wght@400;500;700&amp;display=swap" rel="stylesheet">
 
-    <!-- Bootstrap CSS [ REQUIRED ] -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.75a07e3a3100a6fed983b15ad1b297c127a8c2335854b0efc3363731475cbed6.css">
 
-    <!-- Nifty CSS [ REQUIRED ] -->
     <link rel="stylesheet" href="assets/css/nifty.min.4d1ebee0c2ac4ed3c2df72b5178fb60181cfff43375388fee0f4af67ecf44050.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
     <style>
         .logo-img{
           height: 40px;
@@ -33,27 +31,7 @@
           
         }
       </style>
-    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~---
-
-    [ REQUIRED ]
-    You must include this category in your project.
-
-
-    [ OPTIONAL ]
-    This is an optional plugin. You may choose to include it in your project.
-
-
-    [ DEMO ]
-    Used for demonstration purposes only. This category should NOT be included in your project.
-
-
-    [ SAMPLE ]
-    Here's a sample script that explains how to initialize plugins and/or components: This category should NOT be included in your project.
-
-
-    Detailed information and more samples can be found in the documentation.
-
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~--- -->
+  
 </head>
 
 <body class="jumping">
@@ -284,7 +262,8 @@
                                 <!-- Right Toolbar -->
                                 <div class="col-md-6 d-flex gap-1 align-items-center justify-content-md-end mb-3">
                                     <div class="form-group">
-                                        <input type="text" placeholder="Search..." class="form-control" autocomplete="off">
+                                        <input type="text" id="myInput" placeholder="Search..." class="form-control" autocomplete="off">
+
                                     </div>
                                     <div class="btn-group">
                                         <button class="btn btn-icon btn-outline-light" aria-label="Download"><i class="demo-pli-download-from-cloud fs-5"></i></button>
@@ -308,7 +287,6 @@
 
                             </div>
                         </div>
-
                         <div class="card-body">
                             @if ($errors->any())
                                 <div>
@@ -322,12 +300,14 @@
                             @endif
                             @if(Session::has('success'))
                                 <div class="alert alert-success" >
-                                    <{{ Session::get('success') }}
+                                    {{ Session::get('success') }}
                                 </div>
                             @endif
+                        </div>
 
+                        <div class="card-body">
                             <div class="table-responsive">
-                                <table class="table table-striped">
+                                <table class="table table-striped" id="table">
                                     <thead>
                                         <tr>
                                             <th>Payment ID</th>
@@ -339,7 +319,7 @@
                                             <th class="text-center">Transaction ID</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
+                                    <tbody id="myTable">
                                         @forelse($users_status as $user_status)
                                         <tr>
                                             <td><a href="#" class="btn-link">{{ $user_status->id }} </a></td>
@@ -978,21 +958,10 @@
                 <div class="mainnav__bottom-content border-top pb-2">
                     <ul id="mainnav" class="mainnav__menu nav flex-column">
                         <li class="nav-item has-sub">
-                            <a href="#" class="nav-link mininav-toggle collapsed" aria-expanded="false">
+                            <a role="button" type="submit" class="nav-link mininav-toggle collapsed" aria-expanded="false">
                                 <i class="demo-pli-unlock fs-5 me-2"></i>
                                 <span class="nav-label ms-1">Logout</span>
                             </a>
-                            <ul class="mininav-content nav flex-column collapse">
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link">This device only</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link">All Devices</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Lock screen</a>
-                                </li>
-                            </ul>
                         </li>
                     </ul>
                 </div>
@@ -1016,6 +985,8 @@
 
     <!-- JAVASCRIPTS -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 
     <script>
         const ctx = document.getElementById('usersChart').getContext('2d');
@@ -1054,6 +1025,17 @@
             }
         });
     </script>
+
+<script>
+    $(document).ready(function(){
+        $("#myInput").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $("#myTable tr").filter(function() {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+        });
+    });
+</script>
 
 </body>
 </html>
