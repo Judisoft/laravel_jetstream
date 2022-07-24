@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Auth;
 use App\Models\UserQuestion;
+use App\Models\Question;
 use App\Models\User;
 use App\Models\Answer;
 
@@ -12,9 +13,10 @@ class UserQuestionsController extends Controller
 {
     public function index()
     {
-        $user_questions = UserQuestion::paginate(25);
-
-        return view('user_questions.index', compact('user_questions'));
+        $user_questions = UserQuestion::orderBy('created_at', 'desc')->paginate(25);
+        $subjects = Question::select('subject')->distinct()->get();
+        
+        return view('user_questions.index', compact('user_questions', 'subjects'));
     }
 
 
@@ -105,8 +107,13 @@ class UserQuestionsController extends Controller
     {
         $user_question = UserQuestion::find($id);
 
-        $user_question->delete();
+        if(auth()->user()->id == $user_question->user_id) {
+            $user_question->delete();
 
-        return redirect()->back()->with('success', 'Question deleted');
+            return redirect()->back()->with('success', 'Question deleted successfully');
+        } else {
+            return redirect()->back()->with('errors', 'You don\'t delete this answer');
+        }
+        
     }
 }

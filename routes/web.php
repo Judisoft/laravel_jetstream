@@ -27,7 +27,7 @@ Route::middleware([
 ])->group(function () {
     Route::get('/dashboard', function () {
         return view('dashboard');
-    })->name('dashboard');
+    })->name('dashboard')->middleware('trial');
     
 // Admin Routes
 
@@ -41,6 +41,7 @@ Route::get('/questions', [App\Http\Controllers\QuestionsController::class, 'show
 Route::get('/questions/{subject}', [App\Http\Controllers\QuestionsController::class, 'subjectQuestions'])->name('subject.questions');
 Route::post('/questions-by-subject', [App\Http\Controllers\VerifyAnswerController::class, 'verifyAnswer'])->name('verify.answer');
 Route::get('questions/{subject}/{id}', [App\Http\Controllers\QuestionsController::class, 'getQuestion'])->name('single.question');
+Route::get('/questionsby-subject', [App\Http\Controllers\QuestionsController::class, 'sortQuestions'])->name('sort.questions');
 Route::get('questions/{subject}/{next_qid}', [App\Http\Controllers\QuestionsController::class, 'nextQuestion'])->name('next.question');
 Route::get('teams', [App\Http\Controllers\TeamController::class, 'getTeams'])->name('teams');
 Route::get('teams/{name}', [App\Http\Controllers\TeamController::class, 'getTeamDetail'])->name('team.detail');
@@ -57,10 +58,14 @@ Route::get('/user_questions/{id}/edit', [App\Http\Controllers\UserQuestionsContr
 Route::put('user_questions/{id}/edit', [App\Http\Controllers\UserQuestionsController::class, 'unpdateQuestion'])->name('update.question');
 Route::delete('/user_questions/{id}/delete', [App\Http\Controllers\UserQuestionsController::class, 'deleteQuestion'] )->name('delete.question');
 Route::post('/users_questions/{id}/answer', [App\Http\Controllers\AnswerController::class, 'postAnswer'])->name('post.answer');
+Route::get('/answers/{id}/edit', [App\Http\Controllers\AnswerController::class, 'editAnswer'])->name('edit.answer');
+Route::put('/answers/{id}/edit', [App\Http\Controllers\AnswerController::class, 'updateAnswer']);
+Route::delete('/answers/{id}/delete', [App\Http\Controllers\AnswerController::class, 'deleteAnswer'])->name('answer.delete');
 Route::get('/payment', [App\Http\Controllers\PaymentController::class, 'getPaymentProcessor'])->name('payment');
 Route::post('/payment', [App\Http\Controllers\PaymentController::class, 'postPaymentProcessor'])->name('post.payment');
 // upgrade users sub plan
 });
+
 
 
 

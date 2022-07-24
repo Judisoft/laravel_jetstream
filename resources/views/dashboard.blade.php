@@ -51,11 +51,11 @@
                 <div class="flex justify-center pt-8 sm:justify-start sm:pt-0 w-48">
                    <div class="flex justify-center">
                         <img src="{{ asset('images/white-icon.png') }}" class="logo-img"/>
-                        <span class="pt-2 px-4 text-2xl font-bold">MEDXAM</span>
+                        <span class="pt-2 px-4 text-xl font-bold">MEDXAM</span>
                     </div>
                 </div>
 
-                <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="mt-8 bg-gray-100 dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                     <div class="grid grid-cols-1 md:grid-cols-2">
                         <div class="p-6">
                             <div class="flex items-center">

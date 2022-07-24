@@ -32,6 +32,7 @@ class AnswerUpdate extends Mailable
         return $this->markdown('emails.answer_update')->with([
             'question' => $this->answer->user_question->content,
             'answer' => $this->answer->answer,
+            'question_author' => $this->answer->user_question->user->name,
             'date' => $this->answer->created_at->diffForHumans()
         ]);
     }

@@ -20,7 +20,9 @@
         <script src="{{ asset('js/quiz.js') }}"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <!-- ck editor -->
-        <script src="https://cdn.ckeditor.com/ckeditor5/34.2.0/classic/ckeditor.js"></script>
+        {{-- <script src="https://cdn.ckeditor.com/ckeditor5/34.2.0/classic/ckeditor.js"></script> --}}
+         <!-- ck editor -->
+        <script src="https://cdn.ckeditor.com/4.17.1/standard-all/ckeditor.js"></script>
     </head>
     <body class="font-sans antialiased">
         <x-jet-banner />

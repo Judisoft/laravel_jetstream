@@ -15,7 +15,7 @@ use App\Models\Answer;
 use App\Models\Score;
 use App\Models\Payment;
 
-class User extends Authenticatable
+class User extends Authenticatable implements MustVerifyEmail
 {
     use HasApiTokens;
     use HasFactory;

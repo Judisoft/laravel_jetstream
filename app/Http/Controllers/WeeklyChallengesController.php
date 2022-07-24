@@ -67,7 +67,7 @@ class WeeklyChallengesController extends Controller
         {
             return view('weekly-challenge', compact('questions', 'last_week_id','can_take_challenge'));
         } else{
-            abort(403, 'Medxam Challenge is available on Saturdays only');
+            abort(403, 'Medxam Challenge is available on Saturdays only'); 
         }
 
         

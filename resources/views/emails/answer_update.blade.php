@@ -1,10 +1,10 @@
 @component('mail::message')
-# Dear {{ Auth::user()->name }},
+# Dear {{ $question_author }},
 
 Answer for your question is now available <br>
 
-<div>{!! $question !!}</div>
-<div style="padding:10px;">{!! $answer !!} <br> </div>
+<div style="font-weight:500;color:red;">Question: {!! $question !!}</div>
+<div style="padding:10px;border:3px solid #ddd;background-color:#eee;font-weight:700;">{!! $answer !!} </div> <br><br>
 
 
 

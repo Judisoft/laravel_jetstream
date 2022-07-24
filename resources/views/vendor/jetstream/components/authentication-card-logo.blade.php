@@ -7,8 +7,8 @@
 
 <style>
     .logo-img{
-      height: 50px;
-      width: 50px; 
+      height: 40px;
+      width: 40px; 
       background-color: #4267B2;
       padding: 3px;
       border-radius: 10px;
@@ -18,5 +18,5 @@
   
 <div class="flex justify-center">
   <img src="{{ asset('images/white-icon.png') }}" class="logo-img"/>
-  <span class="pt-4 px-4 text-2xl font-bold">MEDXAM</span>
+  <span class="pt-2 px-4 text-xl font-bold">MEDXAM</span>
 </div>

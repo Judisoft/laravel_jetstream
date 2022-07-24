@@ -16,8 +16,8 @@
     </head>
     <style>
       .logo-img{
-        height: 50px;
-        width: 50px; 
+        height: 40px;
+        width: 40px; 
         background-color: #fff;
         padding: 3px;
         border-radius: 10px;
