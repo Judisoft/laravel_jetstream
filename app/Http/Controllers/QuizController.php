@@ -22,7 +22,23 @@ class QuizController extends Controller
     {
         $questions = Question::where('subject', $subject)->inRandomOrder()->limit(20)->get();
 
-        return view('quiz-detail', compact('questions', 'subject'));
+        $biology = json_decode(json_encode(Question::where('subject', 'biology')->inRandomOrder()->limit(5)->get()), true);
+        $chemistry = json_decode(json_encode(Question::where('subject', 'chemistry')->inRandomOrder()->limit(25)->get()), true);
+        $physics = json_decode(json_encode(Question::where('subject', 'physics')->inRandomOrder()->limit(25)->get()), true);
+        $general_knoledge = json_decode(json_encode(Question::where('subject', 'general_knowledge')->inRandomOrder()->limit(10)->get()), true);
+        $french = json_decode(json_encode(Question::where('subject', 'french')->inRandomOrder()->limit(5)->get()), true);
+        $english = json_decode(json_encode(Question::where('subject', 'english')->inRandomOrder()->limit(5)->get()), true);
+
+        $exam_sample_questions = array_merge($biology,$chemistry,$physics,$general_knoledge,$french,$english);
+
+        if($subject == 'exam-standard')
+        {
+            $questions = $exam_sample_questions;
+        }
+        
+        // return dd($questions);
+
+        return view('quiz-detail', compact('questions', 'subject', 'exam_sample_questions'));
 
     }
 

@@ -65,7 +65,7 @@
 
                             <div class="ml-12">
                                 <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Our collection of automated quizes has a wonderful coverage of every aspect of the competitive entrance examination syllabus. You can auto-test yourself anytime, anywhere!
+                                    Our collection of automated quizes has a wonderful coverage of every aspect of the competitive entrance examination syllabus. Test yourself as you learn, by taking quizzes on each topic!
                                 </div>
                             </div>
                         </div>

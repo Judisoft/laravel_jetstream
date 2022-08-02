@@ -24,7 +24,7 @@
          <!-- ck editor -->
         <script src="https://cdn.ckeditor.com/4.17.1/standard-all/ckeditor.js"></script>
     </head>
-    <body class="font-sans antialiased">
+    <body class="font-sans antialiased sm:mx-3">
         <x-jet-banner />
 
         <div class="min-h-screen bg-gray-100">
@@ -32,7 +32,7 @@
 
             <!-- Page Heading -->
             @if (isset($header))
-                <header class="bg-white shadow">
+                <header class="bg-white shadow-sm">
                     <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
                         {{ $header }}
                     </div>
@@ -43,10 +43,30 @@
             <main>
                 {{ $slot }}
             </main>
+            <footer>
+                <div class="flex justify-center sm:items-center">
+                    <div class="ml-4 text-center bottom-0 pb-3 text-sm text-gray-500 sm:text-right sm:ml-0 opacity-75">
+                        &copy; 2022 Medxam v1.0 | Powered by StudentPortal-CM
+                    </div>
+                </div>
+            </footer>
         </div>
 
         @stack('modals')
 
         @livewireScripts
+        <!--Start of Tawk.to Script-->
+        <script type="text/javascript">
+            var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+            (function(){
+            var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+            s1.async=true;
+            s1.src='https://embed.tawk.to/607982e9f7ce1827093b17bf/1f3daepbo';
+            s1.charset='UTF-8';
+            s1.setAttribute('crossorigin','*');
+            s0.parentNode.insertBefore(s1,s0);
+            })();
+        </script>
+    <!--End of Tawk.to Script-->
     </body>
 </html>

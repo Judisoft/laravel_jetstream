@@ -8,6 +8,9 @@
 
         <form method="POST" action="{{ route('register') }}">
             @csrf
+            <div class="text-right">
+                <h1 class="font-bold">Register</h1>
+            </div>
 
             <div>
                 <x-jet-label for="name" value="{{ __('Name') }}" />

@@ -18,5 +18,5 @@
   
 <div class="flex justify-center">
   <img src="{{ asset('images/white-icon.png') }}" class="logo-img"/>
-  <span class="pt-2 px-4 text-xl font-bold">MEDXAM</span>
+  <a href="{{ route('home') }}" class="py-2 px-4 text-xl font-bold">MEDXAM</a>
 </div>

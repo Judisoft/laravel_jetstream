@@ -9,7 +9,7 @@
     </x-slot>
     <div class="min-h-screen ml-3 mr-3 flex flex-col bg-gray-100 overflow-hidden items-center md:mx-32 sm:mx-32">
         <h1 class="uppercase font-bold p-3 text-2xl">Edit Question</h1>
-        <div class="w-full bg-white sm:max-w-2xl mt-6 p-5 rounded-md  shadow-md overflow-hidden sm:rounded-lg prose">
+        <div class="w-full bg-white sm:max-w-2xl mt-6 p-5 rounded-md  overflow-hidden sm:rounded-lg prose">
             <h3 class="bg-gray-100 p-3 font-bold ">{!! $user_question->content !!} </h3>
             @if ($errors->any())
                 <div>
@@ -32,19 +32,20 @@
                 @csrf
                 <div class="px-4 py-5 sm:p-6 mx-auto">
                     
-                    <select name="subject" class="w-36 rounded">
+                    <select name="subject" class="w-full">
                         <option value="">select subject</option>
                         <option value="biology" @if ($user_question->subject == 'biology') selected @endif>Biology</option>
                         <option value="chemistry" @if ( $user_question->subject == 'chemistry') selected @endif>Chemistry</option>
                         <option value="general_knowledge" @if ( $user_question->subject == 'general_knowledge') selected @endif>General Knowledge</option>
-                        <option value="language" @if ( $user_question->subject == 'language') selected @endif>Language</option>
+                        <option value="english" @if ( $user_question->subject == 'english') selected @endif>English Language</option>
+                        <option value="french" @if ( $user_question->subject == 'french') selected @endif>French Language</option>
                         <option value="physics" @if ($user_question->subject == 'physics') selected @endif>Physics</option>
                     </select>
                 </div>
                 <div class="px-4 py-5 sm:p-6 mx-auto">
                     <div class="col-span-4 sm:col-span-4">
                         {{-- <x-jet-label for="name" value="{{ __('Post Questions') }}" /> --}}
-                        <textarea id="editor1" name="content"  rows="8" class="mt-1 block w-full" placeholder="Type question ..." autofocus>{!! $user_question->content !!}</textarea>
+                        <textarea id="editor2" name="content"  rows="8" class="mt-1 block w-full" placeholder="Type question ..." autofocus>{!! $user_question->content !!}</textarea>
                     </div>
                 </div>
                 <div class="flex items-center justify-end px-4 py-3 bg-gray-50 text-right sm:px-6 sm:rounded-bl-md sm:rounded-br-md">

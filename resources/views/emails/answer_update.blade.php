@@ -1,7 +1,7 @@
 @component('mail::message')
 # Dear {{ $question_author }},
 
-Answer for your question is now available <br>
+Question answered!<br>
 
 <div style="font-weight:500;color:red;">Question: {!! $question !!}</div>
 <div style="padding:10px;border:3px solid #ddd;background-color:#eee;font-weight:700;">{!! $answer !!} </div> <br><br>

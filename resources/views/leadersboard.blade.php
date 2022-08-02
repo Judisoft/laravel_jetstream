@@ -13,7 +13,7 @@
                             <input type="text" id="myInput" name="search" placeholder="Search rank by name" class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 shadow-sm">
                         {{-- </form> --}}
                     </div>
-                    <div class="flex-auto w-32 px-0">
+                    <div class="flex-auto w-64 px-0">
                         <select id="weekId" onchange="getWeekId();" class="inline-flex items-center justify-center px-4 py-3 bg-red-600 border border-transparent  font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-500 focus:outline-none focus:border-red-700 focus:ring focus:ring-red-200 active:bg-red-600 disabled:opacity-25 transition">
                            <option value="{{ $current_week_id }}"> Week {{ $current_week_id }} </option>
                            @for($i=1; $i<$current_week_id; $i++)

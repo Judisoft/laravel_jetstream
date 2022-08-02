@@ -8,6 +8,9 @@
 
         <form method="POST" action="{{ route('password.update') }}">
             @csrf
+            <div class="text-right">
+                <h1 class="font-bold">Password Reset</h1>
+            </div>
 
             <input type="hidden" name="token" value="{{ $request->route('token') }}">
 

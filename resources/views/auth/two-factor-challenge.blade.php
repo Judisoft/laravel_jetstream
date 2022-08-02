@@ -17,7 +17,9 @@
 
             <form method="POST" action="{{ route('two-factor.login') }}">
                 @csrf
-
+                <div class="text-right">
+                    <h1 class="font-bold">Two factor authentication</h1>
+                </div>
                 <div class="mt-4" x-show="! recovery">
                     <x-jet-label for="code" value="{{ __('Code') }}" />
                     <x-jet-input id="code" class="block mt-1 w-full" type="text" inputmode="numeric" name="code" autofocus x-ref="code" autocomplete="one-time-code" />

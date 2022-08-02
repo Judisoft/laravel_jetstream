@@ -15,10 +15,10 @@
                 <h3 class="font-semibold">Monthly access token is set at <strong><s>5000 FCFA</s> 1000 FCFA </strong></h3>
                 <div class="flex flex-col">
                     <p>We accept the following payment methods:</p>
-                    <span>MTN Mobile Money: <strong>672076996</strong></span>
+                    <span>MTN Mobile Money: <strong>672076996 (Name: BAMA KUM JUDE)</strong></span>
                     <span>Orange Money: <strong>672076996</strong></span>
                     <h3 class="font-bold text-red-600 uppercase">How to Pay</h3><hr>
-                    <p>Make a deposit to any of the above numbers and provide the payment details below:<br>Once your payment is received, your account staus will be automatically be updated</p>
+                    <p>Make a deposit to any of the above numbers and provide the payment details below:<br>Once your payment is received, your account status will be automatically updated</p>
                 </div>
                 <div class="flex flex-col border p-3">
                     @if ($errors->any())

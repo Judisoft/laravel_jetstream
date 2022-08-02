@@ -885,7 +885,7 @@
                                         <i class="demo-pli-computer-secure fs-5 me-2"></i>
                                         <span class="ms-1">Lock screen</span>
                                     </a>
-                                    <a href="#" class="nav-link">
+                                    <a href="" class="nav-link">
                                         <i class="demo-pli-unlock fs-5 me-2"></i>
                                         <span class="ms-1">Logout</span>
                                     </a>

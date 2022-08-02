@@ -8,7 +8,8 @@
         </div>
     </x-slot>
     <div class="min-h-screen flex flex-col  bg-gray-100 items-center md:mx-32 sm:mx-32">
-        <div class="w-full bg-white border sm:max-w-2xl mt-6 p-5 rounded-md  shadow-md overflow-hidden sm:rounded-lg prose">
+        <h1 class="uppercase font-bold p-3 text-2xl">Post Question</h1>
+        <div class="w-full bg-white border sm:max-w-2xl mt-6 p-5 rounded-md  overflow-hidden sm:rounded-lg prose">
             @if ($errors->any())
                 <div>
                     <div class="font-medium text-red-600">{{ __('Whoops! Something went wrong.') }}</div>
@@ -31,12 +32,13 @@
                     <div class="col-span-6 sm:col-span-4">
                         {{-- <x-jet-label for="name" value="{{ __('Post Questions') }}" /> --}}
                             {{-- <x-jet-label for="name" value="{{ __('Post Questions') }}" /> --}}
-                        <select name="subject">
+                        <select name="subject" class="w-full">
                             <option value="">select subject</option>
                             <option value="biology">Biology</option>
                             <option value="chemistry">Chemistry</option>
                             <option value="general_knowledge">General Knowledge</option>
-                            <option value="language">Language</option>
+                            <option value="english">English Language</option>
+                            <option value="french">French Language</option>
                             <option value="physics">Physics</option>
                         </select>
                     </div>
@@ -55,9 +57,10 @@
             </form>
         </div>
         <h1 class="uppercase font-bold p-3 text-2xl">My Questions</h1>
-        @forelse ($user_questions as $question)
+        <div class="w-3/4 ">
+            @forelse ($user_questions as $question)
             <a href="{{ route('user_question.detail', $question->id) }}">
-                <div class="min-w-96 bg-white px-2 rounded shadow:md hover:shadow-l mt-3 p-3 sm:p-6 ">
+                <div class="w-half bg-white px-2 rounded shadow:md hover:shadow-l mt-3 p-3 sm:p-6 ">
                     <h3 class="font-semibold"> {!! $question->content !!} </h3>
                     <div class="flex justify-center mt-1 sm:items-center sm:justify-between">
                         <div class="text-center text-sm text-gray-500 sm:text-left">
@@ -91,6 +94,7 @@
         @empty
         <p class="border p-6 rounded-md">We're excited to have you ask your first question</p>
         @endforelse
+        </div>
     </div>
     <script src="{{ asset('js/ckeditor.js') }}"></script>
     <script>

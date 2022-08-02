@@ -21,6 +21,7 @@
     #counter{
         font-size: 3em;
     }
+ 
     /* #scoreContainer{
         display: flex;
         flex-direction: column;
@@ -36,11 +37,10 @@
             <a href="{{ url()->current() }}" class="inline-flex items-center justify-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white  tracking-widest hover:bg-red-500 focus:outline-none focus:border-gray-800 focus:ring focus:ring-red-200 active:bg-red-600 disabled:opacity-25 transition">Generate new Quiz</a>
         </div>
     </x-slot>
-    <div class="min-h-screen flex flex-col bg-gray-100 items-center md:mx-32 sm:mx-32">
+    <div class="flex flex-col bg-gray-100 items-center md:mx-32 sm:mx-32">
         <div class="w-full bg-white  sm:max-w-2xl mt-6 p-5  shadow-md overflow-hidden sm:rounded-lg prose">
             <div class="text-center border-b pb-3">
                 <h1 class="text-center uppercase" id="quizTitle" style="display: none;">{{$subject.' '. __('quiz')}}  </h1>
-              
                 <p class="font-normal text-md" id="textIntro">
                     This quiz contains 20 {{ $subject }} questions. You are expected to complete the entire quiz in 20 minutes.
                     The quiz will automatically end after 20 minutes.<br>
@@ -53,22 +53,21 @@
             <div class="flex items-center" id="scoreContainer" class="w-36" ></div>
             <div id="quiz" style="display: none">
                 <div class="flex justify-end p-2 font-bold" id="counter"></div>
-                <span id="time">59:00</span>
                 <div id="question" class="text-xl font-bold p-3"></div>
                 <div class="flex  items-center ml-3 ">
-                    <input  type="radio" name="choice"  onclick="checkAnswer('A')" value="A"  class="w-6 h-6 text-teal-600 bg-gray-100 border-gray-300 focus:ring-teal-500 dark:focus:ring-teal-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                    <div onclick="checkAnswer('A')" class="w-6 h-6 rounded-full  border-2  focus:bg-red-600 active:bg-red-600"></div>
                     <label for="A" id="A" class="ml-2 text-lg font-semibold text-gray-900 dark:text-gray-300"></label>
                 </div>
                 <div class="flex items-center ml-3">
-                    <input  type="radio" name="choice" onclick="checkAnswer('B')" value="B" class="w-6 h-6 text-teal-600 bg-gray-100 border-gray-300 focus:ring-teal-500 dark:focus:ring-teal-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                    <div onclick="checkAnswer('B')" class="w-6 h-6 rounded-full  border-2  focus:bg-red-600 active:bg-red-600"></div>
                     <label for="B" id="B" class="ml-2 text-lg font-semibold text-gray-900 dark:text-gray-300"></label>
                 </div>
                 <div class="flex items-center ml-3">
-                    <input  type="radio" name="choice" onclick="checkAnswer('C')" value="C" class="w-6 h-6 text-teal-600 bg-gray-100 border-gray-300 focus:ring-teal-500 dark:focus:ring-teal-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                    <div onclick="checkAnswer('C')" class="w-6 h-6 rounded-full  border-2  focus:bg-red-600 active:bg-red-600"></div>
                     <label for="C" id="C" class="ml-2 text-lg font-semibold text-gray-900 dark:text-gray-300"></label>
                 </div>
                 <div class="flex items-center ml-3 mb-3">
-                    <input  type="radio" name="choice" onclick="checkAnswer('D')" value="D" class="w-6 h-6 text-teal-600 bg-gray-100 border-gray-300 focus:ring-teal-500 dark:focus:ring-teal-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                    <div onclick="checkAnswer('D')" class="w-6 h-6 rounded-full  border-2  focus:bg-red-600 active:bg-red-600"></div>
                     <label for="D" id="D" class="ml-2 text-lg font-semibold text-gray-900 dark:text-gray-300"></label>
                 </div>
                 <div id="timer" class="w-52 ">
@@ -85,6 +84,10 @@
                             Tutors
                         </a>
                     </div>
+                </div>
+
+                <div class="ml-4 text-center text-sm text-gray-500 sm:text-right sm:ml-0 opacity-75">
+                    Medxam v1.0
                 </div>
             </div>
         </div>
@@ -136,14 +139,17 @@
             choiceC.innerHTML = q.C;
             choiceD.innerHTML = q.D;
 
-            // uncheck all radio buttons
+             // uncheck all radio buttons
 
-            radioBtns = document.querySelectorAll('input[name="choice"]');
+             radioBtns = document.querySelectorAll('input[name="choice"]');
             
             for(const radioBtn of radioBtns) {
                 
                 radioBtn.checked = false;
+                
             }
+
+           
         }
 
         start.addEventListener("click",startQuiz);
@@ -257,7 +263,14 @@
             //         "/img/1.png";
             
             // scoreDiv.innerHTML = "<img style='text-align:center' src="+ img +">";
-            scoreDiv.innerHTML = "<h2 class='text-red-600 text-teal-600 text-md font-semibold border-b pb-2 mt-3 text-center rounded-md uppercase'>Score: "+ scorePerCent +"%</h2>";
+            scoreDiv.innerHTML = `
+                                <h2 class='text-red-600 bg-gray-100  text-md font-bold border-3 border-red-600 py-3 pb-2 mt-3 text-center rounded-md'>
+                                    Score: ${score} out of ${questions.length}<br> (${scorePerCent} %)
+                                </h2><br>
+                                <div class='flex justify-center'>
+                                    <a href='' class='items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white  tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25 transition no-underline'>View Correction</a>
+                                </div>
+                                `;
         }
 
     </script>

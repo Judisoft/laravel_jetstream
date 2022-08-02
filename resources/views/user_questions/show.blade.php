@@ -92,7 +92,7 @@
                 <div class="px-4 py-5 sm:p-6 mx-auto">
                     <div class="col-span-4 sm:col-span-4">
                         <label for="answer" class="mb-3 text-l font-bold">Post an asnwer</label>
-                        <textarea id="editor1" name="answer"  rows="4" class="mt-1 block w-full" placeholder="Type answer here ..." autofocus>{{ old('answer') }}</textarea>
+                        <textarea id="editor3" name="answer"  rows="4" class="mt-1 block w-full" placeholder="Type answer here ..." autofocus>{{ old('answer') }}</textarea>
                     </div>
                 </div>
                 <div class="flex items-center justify-end px-4 py-3 bg-gray-50 text-right sm:px-6 sm:rounded-bl-md sm:rounded-br-md">

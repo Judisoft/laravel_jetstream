@@ -51,7 +51,7 @@
                         <img src="{{ asset('images/blue-icon.png') }}" class="logo-img"/>
                       </a>
                       @auth
-                        <a href="{{ route('logout') }}" class="nav-button text-uppercase">Logout</a>
+                        <a href="{{ Auth::logout() }}" class="nav-button text-uppercase">Logout</a>
                       @else
                         <a href="{{ route('login') }}" class="nav-button text-uppercase">Login</a>
                       @endauth
@@ -74,14 +74,13 @@
                                     @auth
                                     <a href="{{ route('dashboard') }}" class="button">Go to my Dashboard</a>
                                     @else
-                                    <a href="{{ route('register') }}" class="button">Get Started</a>
+                                    <a href="{{ route('register') }}" class="button">Get Started for FREE</a>
                                     @endauth
                                 </div>
                             </div>
                         </div>
                         <div style="margin-top: 30px">
                             <p class="text-center text-dark pt-5">&copy; 2022, <a href="https://studentportal-cm.com">StudentPortal-CM</a></p>
-                            <p class="text-center text-dark">Developed By <a href="https://kumjude.studentportal-cm.com">JKode</a></p>
                         </div>
                     </div>
                 </div>

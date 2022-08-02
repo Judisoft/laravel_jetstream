@@ -9,15 +9,15 @@
         </div>
     </x-slot>
     <form action="#" method="GET" class="p-3 bg-gray-800 flex justify-center">
-        <select name="topic" class="w-96">
+        <select name="topic" class="w-3/4 rounded-md">
             <option value="">Sort questions by subjects</option>
             @foreach ($subjects as $subject)
                 <option value="{!! $subject->subject !!}">{!! $subject->subject !!}</option>
             @endforeach
         </select>
-        <button type="submit"class="inline-flex items-center justify-center px-4 py-3 bg-red-600 border border-transparent font-semibold text-sm text-white uppercase tracking-widest hover:bg-red-500 focus:outline-none focus:border-red-700 focus:ring focus:ring-red-200 active:bg-red-600 disabled:opacity-25 transition">Sort</button>
+        {{-- <button type="submit"class="inline-flex items-center justify-center px-4 py-3 bg-red-600 border border-transparent font-semibold text-sm text-white uppercase tracking-widest hover:bg-red-500 focus:outline-none focus:border-red-700 focus:ring focus:ring-red-200 active:bg-red-600 disabled:opacity-25 transition">Sort</button> --}}
     </form>
-    <div class="min-h-screen  flex flex-col bg-gray-100 items-center mx-6 md:mx-32 sm:mx-32">
+    <div class="flex flex-col p-4 mt-6 mx-auto w-3/4  rounded-lg overflow-hidden">
         @if ($errors->any())
             <div>
                 <div class="font-medium text-red-600">{{ __('Whoops! Something went wrong.') }}</div>
@@ -39,7 +39,7 @@
         @forelse ($user_questions as $question)
             <div class="flex items-center w-half bg-white rounded-md shadow-sm p-3  mt-5 hover:shadow-md">
                 <a href="{{ route('user_question.detail', $question->id) }}">
-                    <div class="px-2 sm:p-6 mx-auto" class="hover:bg-red-700">
+                    <div class="px-2 sm:p-6" class="hover:bg-red-700">
                         <div class="col-span-8 sm:col-span-4">
                             <h3 class="font-semibold pb-5"> {!! $question->content !!} </h3>
                         </div>

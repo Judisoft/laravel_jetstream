@@ -55,19 +55,19 @@
                 <span id="time">59:00</span>
                 <div id="question" class="text-xl font-bold p-3"></div>
                 <div class="flex  items-center ml-3 ">
-                    <input  type="radio" name="choice"  onclick="checkAnswer('A')" value="A"  class="w-6 h-6 text-teal-600 bg-gray-100 border-gray-300 focus:ring-teal-500 dark:focus:ring-teal-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                    <div onclick="checkAnswer('A')" class="w-6 h-6 rounded-full  border-2  focus:bg-red-600 active:bg-red-600"></div>
                     <label for="A" id="A" class="ml-2 text-lg font-semibold text-gray-900 dark:text-gray-300"></label>
                 </div>
                 <div class="flex items-center ml-3">
-                    <input  type="radio" name="choice" onclick="checkAnswer('B')" value="B" class="w-6 h-6 text-teal-600 bg-gray-100 border-gray-300 focus:ring-teal-500 dark:focus:ring-teal-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                    <div onclick="checkAnswer('B')" class="w-6 h-6 rounded-full  border-2  focus:bg-red-600 active:bg-red-600"></div>
                     <label for="B" id="B" class="ml-2 text-lg font-semibold text-gray-900 dark:text-gray-300"></label>
                 </div>
                 <div class="flex items-center ml-3">
-                    <input  type="radio" name="choice" onclick="checkAnswer('C')" value="C" class="w-6 h-6 text-teal-600 bg-gray-100 border-gray-300 focus:ring-teal-500 dark:focus:ring-teal-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                    <div onclick="checkAnswer('C')" class="w-6 h-6 rounded-full  border-2  focus:bg-red-600 active:bg-red-600"></div>
                     <label for="C" id="C" class="ml-2 text-lg font-semibold text-gray-900 dark:text-gray-300"></label>
                 </div>
                 <div class="flex items-center ml-3 mb-3">
-                    <input  type="radio" name="choice" onclick="checkAnswer('D')" value="D" class="w-6 h-6 text-teal-600 bg-gray-100 border-gray-300 focus:ring-teal-500 dark:focus:ring-teal-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                    <div onclick="checkAnswer('D')" class="w-6 h-6 rounded-full  border-2  focus:bg-red-600 active:bg-red-600"></div>
                     <label for="D" id="D" class="ml-2 text-lg font-semibold text-gray-900 dark:text-gray-300"></label>
                 </div>
                 <div id="timer" class="w-52 ">
@@ -273,7 +273,7 @@
             
             // scoreDiv.innerHTML = "<img style='text-align:center' src="+ img +">";
             scoreDiv.innerHTML = `
-                                <div class='font-semibold border-b pb-2 mt-2 text-center'> <h2 class='text-red-600 text-teal-600 text-md  rounded-md uppercase'>Score:  ${scorePerCent} % </h2><br>
+                                <div class='border-b pb-2 mt-2 text-center'> <h2 class='text-red-600 bg-gray-100 text-md  rounded-md'>Score: ${score}/${questions.length} <br> (${scorePerCent} %) </h2><br>
                                     <a href='{{ route('leaders.board') }}' class='inline-flex items-center justify-center no-underline px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white  tracking-widest hover:bg-red-500 focus:outline-none focus:border-gray-800 focus:ring focus:ring-red-200 active:bg-red-600 disabled:opacity-25 transition'>View position on leaderboard</a> 
                                 </div>`;
             

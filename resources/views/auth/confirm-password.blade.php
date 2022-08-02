@@ -12,6 +12,9 @@
 
         <form method="POST" action="{{ route('password.confirm') }}">
             @csrf
+            <div class="text-right">
+                <h1 class="font-bold">Password Confirm</h1>
+            </div>
 
             <div>
                 <x-jet-label for="password" value="{{ __('Password') }}" />
