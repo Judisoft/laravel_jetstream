@@ -45,7 +45,7 @@
             </main>
             <footer>
                 <div class="flex justify-center sm:items-center">
-                    <div class="ml-4 text-center bottom-0 pb-3 text-sm text-gray-500 sm:text-right sm:ml-0 opacity-75">
+                    <div class="ml-4 pt-2 text-center bottom-0 pb-3 text-sm text-gray-500 sm:text-right sm:ml-0 opacity-75">
                         &copy; 2022 Medxam v1.0 | Powered by StudentPortal-CM
                     </div>
                 </div>

@@ -72,15 +72,15 @@
                                 <p class="pt-5">We understand how much it means to you becoming a Medical Doctor. For this reason, we've built Medxam to help you realize this dream.</p>
                                 <div class="register">
                                     @auth
-                                    <a href="{{ route('dashboard') }}" class="button">Go to my Dashboard</a>
+                                      <a href="{{ route('dashboard') }}" class="button">Go to my Dashboard</a>
                                     @else
-                                    <a href="{{ route('register') }}" class="button">Get Started for FREE</a>
+                                      <a href="{{ route('register') }}" class="button">Get Started for FREE</a>
                                     @endauth
                                 </div>
                             </div>
                         </div>
                         <div style="margin-top: 30px">
-                            <p class="text-center text-dark pt-5">&copy; 2022, <a href="https://studentportal-cm.com">StudentPortal-CM</a></p>
+                            <p class="text-center text-white pt-5">&copy; 2022, <a href="https://studentportal-cm.com">StudentPortal-CM</a></p>
                         </div>
                     </div>
                 </div>

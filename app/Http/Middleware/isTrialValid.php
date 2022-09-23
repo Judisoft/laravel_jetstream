@@ -21,9 +21,9 @@ class isTrialValid
         $end_of_trial = Auth::user()->email_verified_at->addDays(7);
 
 
-        if($end_of_trial <= Carbon::now() ) {
+        if($end_of_trial <= Carbon::now() && Auth::user()->is_premium == 0) {
 
-            return redirect('payment')->with('error', 'Your Trial Period is over');
+            return redirect('payment')->with('success', 'Your Trial Period is over. Kindly subscribe to continue using Medxam ');
         }
 
         return $next($request);

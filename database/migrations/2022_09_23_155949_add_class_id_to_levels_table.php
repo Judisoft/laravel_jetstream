@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddAmountAndValidityToPaymentsTable extends Migration
+class AddClassIdToLevelsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,8 @@ class AddAmountAndValidityToPaymentsTable extends Migration
      */
     public function up()
     {
-        Schema::table('payments', function (Blueprint $table) {
-            $table->integer('amount');
-            $table->integer('valid_for');
+        Schema::table('levels', function (Blueprint $table) {
+            $table->integer('class_id');
         });
     }
 
@@ -26,7 +25,7 @@ class AddAmountAndValidityToPaymentsTable extends Migration
      */
     public function down()
     {
-        Schema::table('payments', function (Blueprint $table) {
+        Schema::table('levels', function (Blueprint $table) {
             //
         });
     }
