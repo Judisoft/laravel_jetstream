@@ -63,7 +63,13 @@ Route::put('/answers/{id}/edit', [App\Http\Controllers\AnswerController::class, 
 Route::delete('/answers/{id}/delete', [App\Http\Controllers\AnswerController::class, 'deleteAnswer'])->name('answer.delete');
 Route::get('/payment', [App\Http\Controllers\PaymentController::class, 'getPaymentProcessor'])->name('payment');
 Route::post('/payment', [App\Http\Controllers\PaymentController::class, 'postPaymentProcessor'])->name('post.payment');
-// upgrade users sub plan
+// Quest
+Route::get('quest', [App\Http\Controllers\QuestController::class, 'index']);
+Route::get('quest/add-question', [App\Http\Controllers\QuestController::class, 'create'])->name('add.question');
+
+// Analytics
+Route::get('analytics', [App\Http\Controllers\AnalyticsController::class, 'analyseUsersContent'])->name('analytics');
+
 });
 
 

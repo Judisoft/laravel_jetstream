@@ -10,9 +10,13 @@
     <link rel="icon" href="{{ asset('images/fav.html') }}" type="image/png" sizes="16x16">
     <link rel="stylesheet" href="{{asset('css/main.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
+    {{-- <link rel="stylesheet" href="{{asset('css/uikit.min.css')}}"> --}}
     <link rel="stylesheet" href="{{asset('css/color.css')}}">
     <link rel="stylesheet" href="{{asset('css/responsive.css')}}">
 	<link href="{{ asset('plugins/apex/apexcharts.css') }}" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- ck editor -->
+    <script src="https://cdn.ckeditor.com/4.17.1/standard-all/ckeditor.js"></script>
     
     @livewireStyles
 
@@ -31,7 +35,11 @@
         @include('layouts.dashboard.side-nav')
     </div>
 @livewireScripts
+@yield('page_scripts')
 <script src="{{asset('js/main.min.js')}}"></script>
+<script src="{{asset('js/uikit.min.js')}}"></script>
+<script src="{{asset('js/sparkline.js')}}"></script>
+<script src="{{asset('js/chart.js')}}"></script>
 <script src="{{asset('js/vivus.min.js')}}"></script>
 <script src="{{asset('js/script.js')}}"></script>
 <script src="{{ asset('plugins/apex/apexcharts.min.js')}}"></script>

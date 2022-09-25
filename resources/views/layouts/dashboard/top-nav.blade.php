@@ -91,6 +91,9 @@
                 <div class="page-title">
                     <h4>Dashboard</h4>
                 </div>
+                @if(Session::has('message'))
+                    <p class="alert {{ Session::get('alert-class', 'alert-info') }}">{{ Session::get('message') }}</p>
+                @endif
             </div>
             <div class="col-lg-6 col-md-6 col-sm-6">
                 <ul class="breadcrumb">
